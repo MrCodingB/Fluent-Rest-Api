@@ -1,7 +1,7 @@
 import { ApiProxyHandler } from './apiProxyHandler';
 import { IHttpClient } from './httpClient';
 import { RestMethod } from './restMethod';
-import { ApiBody, ApiDefaultResult, ApiEndpoint, ApiResult, ApiSpecification, RouteParams } from './types';
+import { ApiBody, ApiDefaultResult, ApiEndpoint, ApiParameter, ApiResult, ApiSpecification, RouteParams } from './types';
 
 export abstract class Api {
     public static endpoint<
@@ -19,7 +19,7 @@ export abstract class Api {
 
     public static param
         <K extends keyof RouteParams, TApi extends ApiSpecification>
-        (_: K, api: TApi): (param: RouteParams[K]) => TApi {
+        (_: K, api: TApi): ApiParameter<K, TApi> {
         return () => api;
     }
 
