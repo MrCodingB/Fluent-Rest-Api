@@ -40,10 +40,8 @@ export type ApiParameter<T extends RouteParams[keyof RouteParams], TApi extends 
 
 export type ApiEndpoints = { [TMethod in RestMethod]?: ApiEndpoint<TMethod, ApiResult<TMethod>, ApiBody<TMethod>> };
 
-export type ApiSpecification = {
-    [urlPart: string]: typeof urlPart extends RestMethod
-    ? ApiEndpoint<typeof urlPart, ApiResult<typeof urlPart>, ApiBody<typeof urlPart>>
-    : ApiSpecification | ApiParameter<any, ApiSpecification>;
+export type ApiSpecification = ApiEndpoints | {
+    [urlPart: string]: typeof urlPart extends RestMethod ? never : ApiSpecification | ApiParameter<any, ApiSpecification>;
 };
 
 export type RouteParams = {
