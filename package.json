@@ -1,21 +1,27 @@
 {
   "name": "fluent-rest-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A typesafe fluent API to make rest-requests",
-  "keywords": ["fluent", "api", "rest", "http", "request"],
+  "keywords": [
+    "fluent",
+    "api",
+    "rest",
+    "http",
+    "request"
+  ],
   "scripts": {
     "cleanup": "node cleanup.js",
-    "cleanbuild": "npm run cleanup && npm run build",
+    "cleanbuild": "npm run cleanup && npm run build && npm run wp",
     "build": "tsc -p tsconfig.json",
-    "prepublishOnly": "npm run cleanbuild"
+    "prepublishOnly": "npm run cleanbuild",
+    "wp": "webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MrCodingB/Fluent-Rest-Api.git"
   },
-  
-  "main": "./lib/index.js",
-  "typings": "./types/index.d.ts",
+  "main": "./lib/fluent-rest-api.js",
+  "typings": "./lib/fluent-rest-api.d.ts",
   "author": "MrCodingB",
   "license": "MIT",
   "readme": "README.md",
@@ -25,6 +31,10 @@
   "homepage": "https://github.com/MrCodingB/Fluent-Rest-Api#readme",
   "devDependencies": {
     "@types/node": "^14.14.27",
-    "typescript": "^4.1.5"
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.1.5",
+    "typescript-declaration-webpack-plugin": "^0.2.2",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
   }
 }
