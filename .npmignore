@@ -1,4 +1,5 @@
 .vscode/
+.github/
 out/
 src/
 test/
