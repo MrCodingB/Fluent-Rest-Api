@@ -1,17 +1,19 @@
-import { Api } from 'fluent-rest-api';
+import { Api, ApiSpecification } from 'fluent-rest-api';
 import { HttpService } from './http.service';
 
-const api = Api.create('/api', new HttpService(), {
+const apiSpecification: ApiSpecification = {
     'farmers': {
-        GET: Api.endpoint<'GET', { id: string }[]>(),
+        GET: Api.endpoint<'GET', { id: string; }[]>(),
         POST: Api.endpoint<'POST', string>(),
         DELETE: Api.endpoint<'DELETE'>(),
         'id': Api.param('string', {
-            GET: Api.endpoint<'GET', { id: string }>(),
+            GET: Api.endpoint<'GET', { id: string; }>(),
             DELETE: Api.endpoint<'DELETE'>()
         })
     }
-});
+};
+
+const api = Api.create('/api', new HttpService(), apiSpecification);
 
 api.farmers.GET();
 api.farmers.POST('12345');

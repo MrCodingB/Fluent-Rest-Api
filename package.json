@@ -1,6 +1,6 @@
 {
   "name": "fluent-rest-api",
-  "version": "1.0.4",
+  "version": "1.1.4",
   "description": "A typesafe fluent API to make rest-requests",
   "keywords": [
     "fluent",
