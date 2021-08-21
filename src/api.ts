@@ -19,7 +19,7 @@ export abstract class Api {
 
     public static param
         <K extends keyof RouteParams, TApi extends ApiSpecification>
-        (_: K, api: TApi): ApiParameter<K, TApi> {
+        (_: K, api: TApi): ApiParameter<RouteParams[K], TApi> {
         return () => api;
     }
 

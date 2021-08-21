@@ -36,11 +36,11 @@ export type ApiEndpoint<TMethod extends RestMethod, TResult extends ApiResult<TM
     ? () => Promise<TResult>
     : (body: TBody) => Promise<TResult>;
 
-export type ApiParameter<K extends keyof RouteParams, TApi extends ApiSpecification> = (param: RouteParams[K]) => TApi;
+export type ApiParameter<T extends RouteParams[keyof RouteParams], TApi extends ApiSpecification> = (param: T) => TApi;
 
 export type ApiEndpoints = { [TMethod in RestMethod]?: ApiEndpoint<TMethod, ApiResult<TMethod>, ApiBody<TMethod>> };
 
-export type ApiSpecification = { [urlPart: string]: ApiSpecification | ApiParameter<keyof RouteParams, ApiSpecification>; } | ApiEndpoints;
+export type ApiSpecification = { [urlPart: string]: ApiSpecification | ApiParameter<any, ApiSpecification>; } | ApiEndpoints;
 
 export type RouteParams = {
     'string': string,
