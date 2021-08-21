@@ -1,3 +1,11 @@
-*
+.vscode/
+out/
+src/
+test/
 
-!lib
+.gitignore
+bundler.js
+cleanup.js
+start.ps1
+tsconfig.json
+webpack.config.js
