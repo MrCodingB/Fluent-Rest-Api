@@ -1,0 +1,11 @@
+{
+  "name": "fluent-rest-api-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "out/main.js",
+  "author": "MrCodingB",
+  "license": "ISC",
+  "dependencies": {
+    "fluent-rest-api": "file:.."
+  }
+}

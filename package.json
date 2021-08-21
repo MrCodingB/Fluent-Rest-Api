@@ -1,0 +1,30 @@
+{
+  "name": "fluent-rest-api",
+  "version": "1.0.0",
+  "description": "A typesafe fluent API to make rest-requests",
+  "keywords": ["fluent", "api", "rest", "http", "request"],
+  "scripts": {
+    "cleanup": "node cleanup.js",
+    "cleanbuild": "npm run cleanup && npm run build",
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run cleanbuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrCodingB/Fluent-Rest-Api.git"
+  },
+  
+  "main": "./lib/index.js",
+  "typings": "./types/index.d.ts",
+  "author": "MrCodingB",
+  "license": "MIT",
+  "readme": "README.md",
+  "bugs": {
+    "url": "https://github.com/MrCodingB/Fluent-Rest-Api/issues"
+  },
+  "homepage": "https://github.com/MrCodingB/Fluent-Rest-Api#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.27",
+    "typescript": "^4.1.5"
+  }
+}

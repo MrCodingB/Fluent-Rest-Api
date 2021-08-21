@@ -1,0 +1,8 @@
+.vscode/
+src/
+test/
+
+*/tsconfig*.json
+
+cleanup.js
+start.ps1
