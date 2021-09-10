@@ -20,8 +20,8 @@
     "type": "git",
     "url": "git+https://github.com/MrCodingB/Fluent-Rest-Api.git"
   },
-  "main": "./lib/fluent-rest-api.js",
-  "typings": "./lib/fluent-rest-api.d.ts",
+  "main": "lib/fluent-rest-api.js",
+  "typings": "lib/fluent-rest-api.d.ts",
   "author": "MrCodingB",
   "license": "MIT",
   "readme": "README.md",
